@@ -1,0 +1,2125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSHI XII – Premium Experiences & Residences</title>
+    <meta name="description" content="Discover Africa and the world with curated collections of premium experiences, properties, and services.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --beige: #D3B896;
+            --dark-beige: #a68a64;
+            --black: #1a1a1a;
+            --white: #FFFFFF;
+            --light-gray: #f8f8f8;
+            --dark-gray: #333333;
+            --gold: #C8A97E;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            color: var(--dark-gray);
+            line-height: 1.6;
+            background-color: var(--white);
+            overflow-x: hidden;
+            font-weight: 400;
+            font-size: 18px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            color: var(--black);
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            font-weight: 400;
+        }
+
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 2.5rem;
+            font-weight: 500;
+        }
+
+        h3 {
+            font-size: 2.2rem;
+            color: var(--dark-beige);
+            font-weight: 500;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 400;
+            line-height: 1.8;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Standardized Button Styles */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 25px;
+            background-color: transparent;
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 500;
+            border: 1px solid var(--black);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'Lora', serif;
+            min-height: 44px;
+            min-width: 150px;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--black);
+            color: var(--white);
+        }
+
+        .btn-beige {
+            background-color: var(--beige);
+            color: var(--white);
+            border: 1px solid var(--beige);
+        }
+
+        .btn-beige:hover {
+            background-color: var(--dark-beige);
+            border-color: var(--dark-beige);
+        }
+
+        .btn-disabled {
+            border: 1px solid #ccc;
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .btn-disabled:hover {
+            background-color: transparent;
+            color: #ccc;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-header p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.3rem;
+            color: #666;
+        }
+
+        /* Header Styles - Scroll Activated */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: transparent;
+            z-index: 1000;
+            transition: var(--transition);
+            padding: 25px 0;
+        }
+
+        header.scrolled {
+            background-color: var(--beige);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Centered Logo */
+        .logo {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: 2px;
+            z-index: 1001;
+            transition: var(--transition);
+        }
+
+        header.scrolled .logo {
+            color: var(--white);
+        }
+
+        .logo span {
+            color: var(--white);
+        }
+
+        /* Header Inquiry Button */
+        .header-inquiry-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 25px;
+            background-color: transparent;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            border: 1px solid var(--white);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'Lora', serif;
+            z-index: 1002;
+            min-height: 44px;
+            min-width: 150px;
+        }
+
+        .header-inquiry-btn:hover {
+            background-color: var(--white);
+            color: var(--black);
+        }
+
+        header.scrolled .header-inquiry-btn {
+            color: var(--white);
+            border-color: var(--white);
+        }
+
+        header.scrolled .header-inquiry-btn:hover {
+            background-color: var(--white);
+            color: var(--beige);
+        }
+
+        /* Hamburger Menu Styles */
+        .hamburger-btn {
+            display: flex;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1002;
+            min-height: 44px;
+        }
+
+        .hamburger-icon {
+            display: flex;
+            flex-direction: column;
+            width: 30px;
+            height: 20px;
+            justify-content: space-between;
+        }
+
+        .hamburger-icon span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: var(--white);
+            transition: var(--transition);
+        }
+
+        header.scrolled .hamburger-icon span {
+            background-color: var(--white);
+        }
+
+        /* Navigation Menu */
+        .nav-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--white);
+            z-index: 1000;
+            padding: 5rem 2rem 2rem;
+            overflow-y: auto;
+        }
+
+        .nav-menu.active {
+            display: block;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+        }
+
+        .nav-menu ul li {
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .nav-menu ul li a {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: inline-block;
+            padding: 10px 0;
+        }
+
+        .nav-menu ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu ul li a:hover {
+            color: var(--gold);
+        }
+
+        .nav-menu ul li a:hover:after {
+            width: 100%;
+        }
+
+        /* Language Switcher in Navigation */
+        .language-switcher {
+            margin: 25px 0;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .language-switcher a {
+            text-decoration: none;
+            color: var(--black);
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            margin-right: 15px;
+            font-weight: 400;
+        }
+
+        .language-switcher a:hover {
+            color: var(--gold);
+        }
+
+        .language-switcher a.active {
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        .coming-soon-badge {
+            position: absolute;
+            top: -8px;
+            right: -25px;
+            background-color: var(--gold);
+            color: var(--white);
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 2px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            color: var(--white);
+            margin-bottom: 2rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            margin-bottom: 3rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
+            font-size: 1.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        /* Service Cards Section */
+        .services-cards {
+            background-color: var(--light-gray);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover .service-card-image img {
+            transform: scale(1.1);
+        }
+
+        .service-card-content {
+            padding: 30px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .service-card p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .service-card .btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        .coming-soon-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .coming-soon-text {
+            font-size: 1.5rem;
+            color: var(--dark-gray);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .invitation-only {
+            font-size: 1rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Image Carousel */
+        .carousel {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.7);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--black);
+            transition: var(--transition);
+            z-index: 10;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .carousel-prev {
+            left: 10px;
+        }
+
+        .carousel-next {
+            right: 10px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-indicator.active {
+            background: var(--white);
+        }
+
+        /* Service Detail Sections */
+        .sub-service-detail {
+            padding: 100px 0;
+        }
+
+        .sub-service-detail .container {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .sub-service-detail img {
+            width: 100%;
+            max-width: 550px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .sub-service-detail-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .sub-service-detail p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .sub-service-detail ul {
+            list-style: none;
+            margin-bottom: 2.5rem;
+        }
+
+        .sub-service-detail ul li {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 2rem;
+            line-height: 1.8;
+        }
+
+        .sub-service-detail ul li::before {
+            content: '\f058';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--beige);
+            font-size: 1.2rem;
+        }
+
+        /* Inquiry Form Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .inquiry-modal {
+            background-color: var(--white);
+            border-radius: 5px;
+            width: 100%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .modal-header h2 {
+            margin-bottom: 0;
+            font-size: 2.2rem;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-gray);
+            transition: var(--transition);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .close-modal:hover {
+            background-color: #f5f5f5;
+            color: var(--black);
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark-gray);
+        }
+
+        .required {
+            color: #e74c3c;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-family: 'Lora', serif;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: #f9f9f9;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--beige);
+            background-color: var(--white);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: var(--beige);
+            color: var(--white);
+            border: none;
+            padding: 14px 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+            font-family: 'Lora', serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--dark-beige);
+        }
+
+        .success-message {
+            display: none;
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .error-message {
+            display: none;
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--white);
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* News Section */
+        .news {
+            background-color: var(--white);
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .news-item {
+            background-color: var(--light-gray);
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .news-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-image {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .news-item:hover .news-image img {
+            transform: scale(1.05);
+        }
+
+        .news-content {
+            padding: 25px;
+        }
+
+        .news-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--black);
+            line-height: 1.4;
+        }
+
+        .news-excerpt {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .news-date {
+            color: var(--gold);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .news-detail {
+            display: none;
+            padding: 40px;
+            background-color: var(--light-gray);
+            border-radius: 5px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .news-detail.active {
+            display: block;
+        }
+
+        .news-detail-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .news-detail-title {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--black);
+        }
+
+        .back-to-news {
+            background-color: var(--beige);
+            color: var(--white);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-family: 'Lora', serif;
+            font-size: 1rem;
+            transition: var(--transition);
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 120px;
+        }
+
+        .back-to-news:hover {
+            background-color: var(--dark-beige);
+        }
+
+        .news-detail-image {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .news-detail-content p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .news-detail-content ul {
+            margin-bottom: 25px;
+            padding-left: 20px;
+        }
+
+        .news-detail-content ul li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .article-tagline {
+            font-style: italic;
+            color: var(--dark-beige);
+            text-align: center;
+            margin-top: 30px;
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+
+        /* Footer with Contact Section */
+        footer {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 80px 0 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-column ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--gold);
+        }
+
+        .contact-details {
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-details p {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+            color: #bbb;
+        }
+
+        .contact-details i {
+            margin-right: 15px;
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+
+        .contact-details a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-details a:hover {
+            color: var(--gold);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: transparent;
+            color: var(--beige);
+            border: 1px solid var(--beige);
+            border-radius: 50%;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            background-color: var(--beige);
+            color: var(--black);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid #333;
+            color: #bbb;
+            font-size: 1.1rem;
+        }
+
+        /* Mobile Responsive Styles for Header */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 0;
+            }
+            
+            header.scrolled {
+                padding: 10px 0;
+            }
+            
+            .header-container {
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            
+            .logo {
+                position: static;
+                transform: none;
+                order: 2;
+                text-align: center;
+                font-size: 1.8rem;
+                flex: 1;
+            }
+            
+            .hamburger-btn {
+                order: 1;
+                margin-right: 10px;
+            }
+            
+            .header-inquiry-btn {
+                display: none;
+            }
+            
+            .nav-menu ul li a {
+                font-size: 1.3rem;
+            }
+            
+            .language-switcher {
+                margin: 20px 0;
+                padding-bottom: 10px;
+            }
+            
+            .language-switcher a {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2.5rem;
+            }
+            
+            .sub-service-detail .container {
+                flex-direction: column;
+            }
+            
+            .sub-service-detail img {
+                max-width: 100%;
+            }
+            
+            .inquiry-modal {
+                width: 95%;
+            }
+            
+            .news-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.3rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                margin-bottom: 0;
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+            
+            body {
+                font-size: 16px;
+            }
+            
+            p {
+                font-size: 1.1rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+            
+            .contact-details p {
+                justify-content: center;
+            }
+            
+            .modal-header {
+                padding: 20px;
+            }
+            
+            .modal-body {
+                padding: 20px;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .news-detail-header {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .back-to-news {
+                align-self: flex-start;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            section {
+                padding: 70px 0;
+            }
+            
+            .btn {
+                min-height: 44px;
+                padding: 10px 15px;
+            }
+            
+            .modal-overlay {
+                padding: 10px;
+            }
+            
+            .modal-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .news-detail {
+                padding: 25px;
+            }
+            
+            .news-detail-title {
+                font-size: 1.7rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero-buttons {
+                gap: 10px;
+            }
+            
+            .btn {
+                min-height: 44px;
+                padding: 10px 15px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="mainHeader">
+        <div class="container header-container">
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger-btn" aria-label="Open navigation menu">
+                <div class="hamburger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            
+            <!-- Centered Logo -->
+            <a href="#" class="logo">OSHI <span>XII</span></a>
+            
+            <!-- Header Inquiry Button -->
+            <button class="header-inquiry-btn" id="openInquiryModal">Send Inquiry</button>
+            
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <!-- Language Switcher -->
+                <div class="language-switcher">
+                    <a href="#" class="active" data-lang="en">EN</a>
+                    <a href="#" data-lang="fr">FR</a>
+                </div>
+                
+                <ul>
+                    <li><a href="#home" data-key="home">Home</a></li>
+                    <li><a href="#premium-residences" data-key="premium-residences">Premium Residences</a></li>
+                    <li><a href="#safari-nature" data-key="safari-nature">Safari & Nature</a></li>
+                    <li><a href="#corporate-services" data-key="corporate-services">Corporate Services</a></li>
+                    <li class="menu-item-has-children">
+                        <a href="#concierge-services" data-key="concierge-services">Concierge Services</a>
+                        <span class="coming-soon-badge" data-key="coming-soon">Coming Soon</span>
+                    </li>
+                    <li><a href="#about" data-key="about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 data-key="hero-title">Experience Greater Living</h1>
+                <p data-key="hero-subtitle">Discover curated residences and safaris across Africa, tailored for discerning travelers.</p>
+                <div class="hero-buttons">
+                    <a href="#premium-residences" class="btn btn-beige" data-key="explore">Explore</a>
+                    <button class="btn btn-beige" id="heroInquiryBtn" data-key="book">Book</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Cards Section -->
+    <section id="services" class="services-cards">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-key="our-services">Our Services</h2>
+                <p data-key="services-description">Experience the first phase of our premium offerings, with exclusive concierge services launching soon</p>
+            </div>
+            <div class="services-grid">
+                <!-- Premium Residences Card -->
+                <div class="service-card" data-service="premium-residences">
+                    <div class="carousel" id="residences-carousel">
+                        <div class="carousel-track" id="residences-track">
+                            <div class="carousel-slide">
+                                <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2067&q=80" alt="Premium Residences">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Premium Villa">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Modern Interior">
+                            </div>
+                        </div>
+                        <button class="carousel-btn carousel-prev" onclick="prevSlide('residences')">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn carousel-next" onclick="nextSlide('residences')">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <div class="carousel-indicators" id="residences-indicators">
+                            <div class="carousel-indicator active" onclick="goToSlide('residences', 0)"></div>
+                            <div class="carousel-indicator" onclick="goToSlide('residences', 1)"></div>
+                            <div class="carousel-indicator" onclick="goToSlide('residences', 2)"></div>
+                        </div>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 data-key="premium-residences">Premium Residences</h3>
+                        <p data-key="premium-residences-desc">Curated high-end stays across Africa's most breathtaking destinations, offering unparalleled comfort and premium experiences.</p>
+                        <button class="btn" data-key="view-properties" data-service="premium-residences">View Properties</button>
+                    </div>
+                </div>
+
+                <!-- Safari & Nature Escapes Card -->
+                <div class="service-card" data-service="safari-nature">
+                    <div class="carousel" id="safari-carousel">
+                        <div class="carousel-track" id="safari-track">
+                            <div class="carousel-slide">
+                                <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Safari & Nature Escapes">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Wildlife Safari">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2068&q=80" alt="Premium Camp">
+                            </div>
+                        </div>
+                        <button class="carousel-btn carousel-prev" onclick="prevSlide('safari')">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn carousel-next" onclick="nextSlide('safari')">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <div class="carousel-indicators" id="safari-indicators">
+                            <div class="carousel-indicator active" onclick="goToSlide('safari', 0)"></div>
+                            <div class="carousel-indicator" onclick="goToSlide('safari', 1)"></div>
+                            <div class="carousel-indicator" onclick="goToSlide('safari', 2)"></div>
+                        </div>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 data-key="safari-nature">Safari & Nature Escapes</h3>
+                        <p data-key="safari-nature-desc">Immersive African experiences that connect you with wildlife, culture, and breathtaking natural landscapes.</p>
+                        <button class="btn" data-key="explore-journeys" data-service="safari-nature">Explore Journeys</button>
+                    </div>
+                </div>
+
+                <!-- Concierge Services Card -->
+                <div class="service-card">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2025&q=80" alt="Concierge Services">
+                    <div class="coming-soon-overlay">
+                        <div class="coming-soon-text" data-key="coming-soon">Coming Soon</div>
+                        <div class="invitation-only" data-key="invitation-only">By Invitation</div>
+                    </div>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 data-key="concierge-services">Concierge Services</h3>
+                        <p data-key="concierge-services-desc">Comprehensive lifestyle management and personalized nutrition programs designed to simplify and enhance your daily life.</p>
+                        <button class="btn btn-disabled" data-key="available-soon">Available Soon</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Residences Section -->
+    <section id="premium-residences" class="sub-service-detail">
+        <div class="container">
+            <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2067&q=80" alt="Premium Residences">
+            <div class="sub-service-detail-content">
+                <h2 data-key="premium-residences">Premium Residences</h2>
+                <p data-key="premium-residences-detail">Our curated collection of high-end properties offers unparalleled comfort and premium experiences across Africa's most breathtaking destinations. Each residence is carefully selected for its unique character, exceptional amenities, and stunning locations.</p>
+                <ul>
+                    <li data-key="premium-residences-item1">Beach Villas with private ocean access</li>
+                    <li data-key="premium-residences-item2">Wine Valley Retreats in premier vineyards</li>
+                    <li data-key="premium-residences-item3">Urban Retreats in vibrant city centers</li>
+                    <li data-key="premium-residences-item4">Mountain Lodges with panoramic views</li>
+                    <li data-key="premium-residences-item5">24/7 dedicated concierge service</li>
+                    <li data-key="premium-residences-item6">Personalized experiences and activities</li>
+                </ul>
+                <button class="btn" data-service="Premium Residences" data-key="inquire-now">Inquire Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safari & Nature Section -->
+    <section id="safari-nature" class="sub-service-detail">
+        <div class="container">
+            <div class="sub-service-detail-content">
+                <h2 data-key="safari-nature">Safari & Nature Escapes</h2>
+                <p data-key="safari-nature-detail">Immerse yourself in Africa's wild beauty with our carefully crafted safari experiences. From tracking the Big Five to cultural encounters with local communities, each journey is designed to create lasting memories and deep connections with nature.</p>
+                <ul>
+                    <li data-key="safari-nature-item1">Private guided wildlife safaris</li>
+                    <li data-key="safari-nature-item2">Premium tented camps and lodges</li>
+                    <li data-key="safari-nature-item3">Cultural immersion experiences</li>
+                    <li data-key="safari-nature-item4">Photography-focused expeditions</li>
+                    <li data-key="safari-nature-item5">Conservation-focused activities</li>
+                    <li data-key="safari-nature-item6">Exclusive access to private reserves</li>
+                </ul>
+                <button class="btn" data-service="Safari & Nature Escapes" data-key="inquire-now">Inquire Now</button>
+            </div>
+            <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Safari & Nature Escapes">
+        </div>
+    </section>
+
+    <!-- Corporate Services Section -->
+    <section id="corporate-services" class="sub-service-detail">
+        <div class="container">
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Corporate Experiences & Events">
+            <div class="sub-service-detail-content">
+                <h2 data-key="corporate-services">Corporate Experiences & Events</h2>
+                <p data-key="corporate-services-detail">Curated gatherings designed to inspire, connect, and elevate your team's potential through expertly managed conferences, retreats, and forums. We create environments where business objectives meet exceptional experiences.</p>
+                <ul>
+                    <li data-key="corporate-services-item1">Corporate Conferences with premium venues and facilities</li>
+                    <li data-key="corporate-services-item2">Executive Retreats for leadership teams</li>
+                    <li data-key="corporate-services-item3">Leadership Forums for thought leaders</li>
+                    <li data-key="corporate-services-item4">Annual Corporate Events and milestone celebrations</li>
+                    <li data-key="corporate-services-item5">Team building activities in inspiring locations</li>
+                    <li data-key="corporate-services-item6">Strategic planning sessions with expert facilitation</li>
+                </ul>
+                <button class="btn" data-service="Corporate Experiences & Events" data-key="inquire-now">Inquire Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-key="about">About OSHI XII</h2>
+                <p data-key="about-description">Our vision for intentional, elevated living across Africa and beyond</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p data-key="about-text1">At OSHI XII, we believe in the art of Greater Living a lifestyle where every detail is thoughtfully curated to elevate your wellbeing, enrich your everyday, and connect you more deeply to the world around you.</p>
+                    <p data-key="about-text2">We're launching with our core offerings of <strong data-key="premium-residences">Premium Residences</strong> and <strong data-key="safari-nature">Safari & Nature Escapes</strong>, with plans to expand into comprehensive concierge services through a phased approach.</p>
+                    <p data-key="about-text3">Every OSHI XII experience is personal. We blend authentic cultural immersion with refined comfort and world-class service creating meaningful moments that reflect your values and aspirations.</p>
+                    <p data-key="about-text4">Welcome to OSHI XII purposeful, elevated, and designed for you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="news">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-key="news-partnerships">News & Partnerships</h2>
+                <p data-key="news-description">Stay updated with our latest collaborations and exclusive events</p>
+            </div>
+            
+            <!-- News Grid -->
+            <div class="news-grid" id="newsGrid">
+                <!-- LUSSO AUTO Partnership News Item -->
+                <div class="news-item" data-news="lusso-auto">
+                    <div class="news-image">
+                        <img src="4U4A5519(1).jpg" alt="Ferrari Sports Car">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">September 2025</div>
+                        <h3 class="news-title">Exclusive Wine Country Motorsport Weekend</h3>
+                        <p class="news-excerpt">OSHI XII proudly presents an exclusive collaboration with LUSSO AUTO, merging refined automotive performance with premium travel in our signature Wine Country Motorsport Weekend.</p>
+                        <button class="btn read-more-btn">Read More</button>
+                    </div>
+                </div>
+                
+                <!-- Zambia News Item -->
+                <div class="news-item" data-news="zambia">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Zambia Landscape">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">October 2025</div>
+                        <h3 class="news-title">Discover Zambia: An Underrated, Peaceful Gem in Southern Africa</h3>
+                        <p class="news-excerpt">Zambia is emerging as one of Southern Africa's most captivating destinations, offering untouched landscapes, rich wildlife, and vibrant cultural experiences in a peaceful, unhurried setting.</p>
+                        <button class="btn read-more-btn">Read More</button>
+                    </div>
+                </div>
+                
+                <!-- Cape Town Residential News Item -->
+                <div class="news-item" data-news="cape-town-residential">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Cape Town Villa">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">June 2025</div>
+                        <h3 class="news-title">New Cape Town Premium Residences Collection</h3>
+                        <p class="news-excerpt">Our curated collection of premium residences expands with new properties in Cape Town, offering unparalleled comfort and experiences in South Africa's most vibrant city.</p>
+                        <button class="btn read-more-btn">Read More</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- News Detail Views -->
+            <!-- LUSSO AUTO Partnership Article -->
+            <div class="news-detail" id="lusso-auto-detail">
+                <div class="news-detail-header">
+                    <div>
+                        <h2 class="news-detail-title">Exclusive Wine Country Motorsport Weekend</h2>
+                        <div class="news-date">September 2025</div>
+                    </div>
+                    <button class="back-to-news">Back to News</button>
+                </div>
+                
+                <!-- Ferrari Image -->
+                <img src="4U4A5519(1).jpg" alt="Ferrari Sports Car" class="news-detail-image">
+                
+                <div class="news-detail-content">
+                    <p>
+                        OSHI XII proudly presents an exclusive collaboration with LUSSO AUTO, merging refined automotive performance with premium travel in our signature Wine Country Motorsport Weekend.
+                    </p>
+                    
+                    <h4>A Curated Automotive Experience</h4>
+                    <p>
+                        Founder Saidy Kasangala and automotive partner Riccardo have crafted this unique getaway, combining OSHI XII's hospitality expertise with LUSSO AUTO's precision vehicle offerings. We've secured exclusive accommodations and partnered with premier event organizers to deliver an unforgettable experience for discerning automotive enthusiasts.
+                    </p>
+                    
+                    <h4>The Weekend Experience</h4>
+                    <ul>
+                        <li>Scenic drives through renowned wine regions in high-performance vehicles</li>
+                        <li>Private access to select countryside estates</li>
+                        <li>Tailored motorsport experiences, including Formula 1 viewing from the property lounge</li>
+                        <li>Premium wine tastings and exceptional dining experiences</li>
+                        <li>Networking with fellow automotive and lifestyle enthusiasts</li>
+                    </ul>
+                    
+                    <h4>Seamless Experience</h4>
+                    <p>
+                        This partnership ensures every aspect of your journey reflects excellence. From the moment you arrive in your premium vehicle to your departure, each detail is thoughtfully curated to provide an experience that celebrates both automotive passion and refined travel.
+                    </p>
+                    
+                    <p>
+                        Join us in Franschhoek for a weekend where automotive artistry meets premium hospitality in South Africa's most inspiring wine country settings.
+                    </p>
+
+                    <p class="article-tagline">
+                        Drive. Dine. Relax. Celebrate the art of Greater Living in Franschhoek.
+                    </p>
+                </div>
+                
+                <button class="btn">Inquire</button>
+            </div>
+            
+            <!-- Zambia Article -->
+            <div class="news-detail" id="zambia-detail">
+                <div class="news-detail-header">
+                    <div>
+                        <h2 class="news-detail-title">Discover Zambia: An Underrated, Peaceful Gem in Southern Africa</h2>
+                        <div class="news-date">October 2025</div>
+                    </div>
+                    <button class="back-to-news">Back to News</button>
+                </div>
+                
+                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Zambia Landscape" class="news-detail-image">
+                
+                <div class="news-detail-content">
+                    <p>
+                        Zambia is emerging as one of Southern Africa's most captivating destinations, offering <strong>untouched landscapes</strong>, rich wildlife, and vibrant cultural experiences in a peaceful, unhurried setting.
+                    </p>
+                    
+                    <h4>Wildlife & Nature Adventures</h4>
+                    <p>
+                        From the majestic Victoria Falls to the vast national parks, Zambia is home to abundant wildlife and breathtaking scenery. Visitors can explore:
+                    </p>
+                    
+                    <ul>
+                        <li>Private game drives through untamed wilderness</li>
+                        <li>River safaris and canoe excursions</li>
+                        <li>Birdwatching in some of Africa's most biodiverse habitats</li>
+                        <li>Eco-friendly lodges nestled in natural surroundings</li>
+                        <li>Cultural encounters with local communities</li>
+                    </ul>
+                    
+                    <h4>Unique Experiences</h4>
+                    <p>
+                        Zambia offers a chance to go beyond traditional safaris, including walking safaris, night drives, and immersive experiences that connect travelers with nature and local traditions.
+                    </p>
+                    
+                    <h4>Sustainable Tourism</h4>
+                    <p>
+                        With a growing focus on sustainable travel, Zambia encourages low-impact tourism that benefits both visitors and local ecosystems. Each journey aims to preserve the country's natural beauty while providing meaningful experiences for guests.
+                    </p>
+                    
+                    <p>
+                        Discover Zambia's peaceful landscapes, rich culture, and hidden treasures, and see why it's one of Africa's most underrated destinations.
+                    </p>
+                </div>
+                
+                <button class="btn">Inquire</button>
+            </div>
+            
+            <!-- Cape Town Residential Detail -->
+            <div class="news-detail" id="cape-town-residential-detail">
+                <div class="news-detail-header">
+                    <div>
+                        <h2 class="news-detail-title">New Cape Town Premium Residences Collection</h2>
+                        <div class="news-date">June 2025</div>
+                    </div>
+                    <button class="back-to-news">Back to News</button>
+                </div>
+                
+                <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Cape Town Villa" class="news-detail-image">
+                
+                <div class="news-detail-content">
+                    <p>
+                        Our curated collection of premium residences expands with new properties in Cape Town, offering unparalleled comfort and experiences in South Africa's most vibrant city.
+                    </p>
+                    
+                    <h4>Expanding Our Portfolio</h4>
+                    <p>
+                        We're thrilled to announce the addition of three exceptional properties to our Premium Residences collection in Cape Town, each offering unique architectural design, premium amenities, and breathtaking locations.
+                    </p>
+                    
+                    <h4>New Property Highlights</h4>
+                    <ul>
+                        <li><strong>Clifton Beach Villa:</strong> A contemporary cliffside villa with panoramic ocean views and private beach access</li>
+                        <li><strong>Table Mountain Retreat:</strong> A modern sanctuary nestled against the iconic mountain with panoramic city views</li>
+                        <li><strong>V&A Waterfront Penthouse:</strong> An exclusive urban residence with private harbor views and premium amenities</li>
+                    </ul>
+                    
+                    <h4>Signature OSHI XII Experience</h4>
+                    <p>
+                        Each property maintains our commitment to exceptional service, with dedicated concierge teams, personalized experiences, and attention to every detail that defines the OSHI XII standard.
+                    </p>
+                    
+                    <p>
+                        These new additions expand our ability to offer discerning travelers premium accommodations in one of Africa's most sought-after destinations.
+                    </p>
+                </div>
+                
+                <button class="btn">Inquire</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inquiry Modal -->
+    <div class="modal-overlay" id="inquiryModal">
+        <div class="inquiry-modal">
+            <div class="modal-header">
+                <h2 data-key="inquiry-title">Send an Inquiry</h2>
+                <button class="close-modal" id="closeInquiryModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="inquiryForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName" data-key="first-name">First Name <span class="required">*</span></label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="lastName" data-key="last-name">Last Name <span class="required">*</span></label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email" data-key="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="budget" data-key="budget">Budget Range</label>
+                        <select id="budget" name="budget">
+                            <option value="">Select budget range</option>
+                            <option value="premium" data-key="premium">Premium</option>
+                            <option value="ultra-premium" data-key="ultra-premium">Ultra Premium</option>
+                            <option value="bespoke" data-key="bespoke">Bespoke Custom</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" data-key="message">Additional Details <span class="required">*</span></label>
+                        <textarea id="message" name="message" placeholder="Please provide details about your requirements, preferences, and any specific requests..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn" data-key="submit-inquiry">Submit Inquiry</button>
+                    
+                    <div class="success-message" id="successMessage">
+                        <i class="fas fa-check-circle"></i> <span data-key="success-message">Thank you for your inquiry! We'll get back to you within 24 hours.</span>
+                    </div>
+                    
+                    <div class="error-message" id="errorMessage">
+                        <i class="fas fa-exclamation-circle"></i> <span data-key="error-message">There was an error submitting your inquiry. Please try again or contact us directly.</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer with Contact Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>OSHI XII</h3>
+                    <p data-key="footer-description">Experience Greater Living with curated collections of premium experiences, properties, and services across Africa and beyond.</p>
+                </div>
+                <div class="footer-column">
+                    <h3 data-key="services">Services</h3>
+                    <ul>
+                        <li><a href="#premium-residences" data-key="premium-residences">Premium Residences</a></li>
+                        <li><a href="#safari-nature" data-key="safari-nature">Safari & Nature Escapes</a></li>
+                        <li><a href="#corporate-services" data-key="corporate-services">Corporate Services</a></li>
+                        <li><a href="#concierge-services" data-key="concierge-services">Concierge Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 data-key="contact-us">Contact Us</h3>
+                    <div class="contact-details">
+                        <p><i class="fas fa-map-marker-alt"></i> HQ: Cape Town, South Africa</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Livingstone, Zambia</p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:+27718462380">+27 718 462 380</a></p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:info@oshixii.com">info@oshixii.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/OSHIXII" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/oshixii" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/oshi-xii" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://twitter.com/OSHIXII" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 OSHI XII. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll-activated header functionality
+        const header = document.getElementById('mainHeader');
+        
+        function updateHeader() {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+        
+        // Initial check
+        updateHeader();
+        
+        // Listen for scroll events
+        window.addEventListener('scroll', updateHeader);
+
+        // Mobile Menu Functionality
+        const hamburgerBtn = document.querySelector('.hamburger-btn');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburgerBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.header-container') && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // News Functionality
+        const readMoreBtns = document.querySelectorAll('.read-more-btn');
+        const backToNewsBtns = document.querySelectorAll('.back-to-news');
+        const newsGrid = document.getElementById('newsGrid');
+        const newsDetails = document.querySelectorAll('.news-detail');
+
+        // Show news detail
+        readMoreBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const newsItem = this.closest('.news-item');
+                const newsId = newsItem.getAttribute('data-news');
+                
+                // Hide news grid
+                newsGrid.style.display = 'none';
+                
+                // Show corresponding news detail
+                document.getElementById(`${newsId}-detail`).classList.add('active');
+                
+                // Scroll to top of news section
+                document.getElementById('news').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Back to news grid
+        backToNewsBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Hide all news details
+                newsDetails.forEach(detail => {
+                    detail.classList.remove('active');
+                });
+                
+                // Show news grid
+                newsGrid.style.display = 'grid';
+                
+                // Scroll to top of news section
+                document.getElementById('news').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Image Carousel Functionality
+        const carousels = {
+            residences: {
+                currentIndex: 0,
+                totalSlides: 3
+            },
+            safari: {
+                currentIndex: 0,
+                totalSlides: 3
+            }
+        };
+
+        function updateCarousel(carouselId) {
+            const carousel = carousels[carouselId];
+            const track = document.getElementById(`${carouselId}-track`);
+            const indicators = document.querySelectorAll(`#${carouselId}-indicators .carousel-indicator`);
+            
+            track.style.transform = `translateX(-${carousel.currentIndex * 100}%)`;
+            
+            indicators.forEach((indicator, index) => {
+                if (index === carousel.currentIndex) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+        }
+
+        function nextSlide(carouselId) {
+            const carousel = carousels[carouselId];
+            carousel.currentIndex = (carousel.currentIndex + 1) % carousel.totalSlides;
+            updateCarousel(carouselId);
+        }
+
+        function prevSlide(carouselId) {
+            const carousel = carousels[carouselId];
+            carousel.currentIndex = (carousel.currentIndex - 1 + carousel.totalSlides) % carousel.totalSlides;
+            updateCarousel(carouselId);
+        }
+
+        function goToSlide(carouselId, index) {
+            const carousel = carousels[carouselId];
+            carousel.currentIndex = index;
+            updateCarousel(carouselId);
+        }
+
+        // Auto-advance carousels
+        setInterval(() => {
+            nextSlide('residences');
+        }, 5000);
+
+        setInterval(() => {
+            nextSlide('safari');
+        }, 5500);
+
+        // Inquiry Modal Functionality
+        const inquiryModal = document.getElementById('inquiryModal');
+        const openInquiryModalBtn = document.getElementById('openInquiryModal');
+        const closeInquiryModalBtn = document.getElementById('closeInquiryModal');
+        const heroInquiryBtn = document.getElementById('heroInquiryBtn');
+        const serviceInquiryBtns = document.querySelectorAll('.service-card .btn, .sub-service-detail .btn, .news-detail .btn');
+
+        function openInquiryModal(service = '') {
+            inquiryModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Pre-fill service if specified
+            if (service) {
+                const serviceSelect = document.getElementById('service');
+                if (serviceSelect) {
+                    serviceSelect.value = service;
+                }
+            }
+        }
+
+        function closeInquiryModal() {
+            inquiryModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        openInquiryModalBtn.addEventListener('click', () => openInquiryModal());
+        heroInquiryBtn.addEventListener('click', () => openInquiryModal());
+        closeInquiryModalBtn.addEventListener('click', closeInquiryModal);
+
+        serviceInquiryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const service = btn.getAttribute('data-service');
+                openInquiryModal(service);
+            });
+        });
+
+        // Close modal when clicking outside
+        inquiryModal.addEventListener('click', (e) => {
+            if (e.target === inquiryModal) {
+                closeInquiryModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && inquiryModal.classList.contains('active')) {
+                closeInquiryModal();
+            }
+        });
+
+        // Form submission handling
+        const inquiryForm = document.getElementById('inquiryForm');
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+
+        inquiryForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simple form validation
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (!firstName || !lastName || !email || !message) {
+                showMessage(errorMessage, 'There was an error submitting your inquiry. Please try again or contact us directly.');
+                return;
+            }
+            
+            if (!isValidEmail(email)) {
+                showMessage(errorMessage, 'There was an error submitting your inquiry. Please try again or contact us directly.');
+                return;
+            }
+            
+            // Simulate form submission
+            const submitBtn = this.querySelector('.submit-btn');
+            submitBtn.disabled
+                        submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+            
+            // Simulate API call
+            setTimeout(() => {
+                showMessage(successMessage, 'Thank you for your inquiry! We\'ll get back to you within 24 hours.');
+                inquiryForm.reset();
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Inquiry';
+                
+                // Close modal after success
+                setTimeout(() => {
+                    closeInquiryModal();
+                }, 3000);
+            }, 1500);
+        });
+
+        function showMessage(element, message) {
+            element.textContent = message;
+            element.style.display = 'block';
+            
+            // Hide other messages
+            if (element === successMessage) {
+                errorMessage.style.display = 'none';
+            } else {
+                successMessage.style.display = 'none';
+            }
+            
+            // Auto-hide after 5 seconds
+            setTimeout(() => {
+                element.style.display = 'none';
+            }, 5000);
+        }
+
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // Language Switcher Functionality
+        const languageLinks = document.querySelectorAll('.language-switcher a');
+        
+        languageLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                languageLinks.forEach(l => l.classList.remove('active'));
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                // Get selected language
+                const lang = this.getAttribute('data-lang');
+                
+                // Update content based on selected language
+                updateContentLanguage(lang);
+            });
+        });
+
+        // Simple language content update (in a real implementation, this would be more comprehensive)
+        function updateContentLanguage(lang) {
+            const elements = document.querySelectorAll('[data-key]');
+            
+            elements.forEach(element => {
+                const key = element.getAttribute('data-key');
+                // In a real implementation, you would fetch translations from a dictionary
+                // For now, we'll just log the language change
+                console.log(`Updating ${key} to ${lang}`);
+            });
+            
+            // Update HTML lang attribute
+            document.documentElement.setAttribute('lang', lang);
+        }
+
+        // Initialize carousels
+        updateCarousel('residences');
+        updateCarousel('safari');
+
+        // Add loading animation for images
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            img.addEventListener('load', function() {
+                this.style.opacity = '1';
+            });
+            
+            // Set initial opacity to 0 for fade-in effect
+            img.style.opacity = '0';
+            img.style.transition = 'opacity 0.5s ease';
+            
+            // If image is already loaded (from cache)
+            if (img.complete) {
+                img.style.opacity = '1';
+            }
+        });
+
+        // Add intersection observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        const animateElements = document.querySelectorAll('.service-card, .sub-service-detail, .news-item');
+        animateElements.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Enhanced smooth scrolling with offset for fixed header
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerHeight = document.getElementById('mainHeader').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        console.log('OSHI XII website initialized successfully');
+    </script>
+</body>
+</html>
