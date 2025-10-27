@@ -152,7 +152,9 @@
             color: #666;
         }
 
-        /* Header Styles - Scroll Activated */
+        /* ===== HEADER REFINEMENTS ===== */
+
+        /* Fix mobile zoom issue and reduce header height */
         header {
             position: fixed;
             top: 0;
@@ -161,35 +163,43 @@
             background-color: transparent;
             z-index: 1000;
             transition: var(--transition);
-            padding: 25px 0;
+            padding: 15px 0; /* Reduced from 25px */
+            /* Prevent zoom on iOS */
+            -webkit-text-size-adjust: 100%;
+            touch-action: manipulation;
         }
 
         header.scrolled {
-            background-color: var(--beige);
+            background-color: rgba(211, 184, 150, 0.95); /* Semi-transparent beige */
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-            padding: 15px 0;
+            padding: 10px 0; /* Reduced from 15px */
+            backdrop-filter: blur(10px); /* Adds subtle blur effect */
         }
 
+        /* Improved header container alignment */
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: relative;
+            min-height: 50px; /* Reduced overall height */
         }
 
-        /* Centered Logo */
+        /* Enhanced logo positioning and sizing */
         .logo {
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: 1.8rem; /* Slightly reduced */
             font-weight: 500;
             color: var(--white);
             text-decoration: none;
             letter-spacing: 2px;
             z-index: 1001;
             transition: var(--transition);
+            line-height: 1;
+            padding: 5px 0; /* Added padding for better touch target */
         }
 
         header.scrolled .logo {
@@ -200,12 +210,59 @@
             color: var(--white);
         }
 
-        /* Header Inquiry Button */
+        /* Improved hamburger button - smaller and better positioned */
+        .hamburger-btn {
+            display: flex;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px; /* Reduced from 0.5rem */
+            z-index: 1002;
+            min-height: 44px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hamburger-icon {
+            display: flex;
+            flex-direction: column;
+            width: 22px; /* Slightly reduced */
+            height: 16px; /* Slightly reduced */
+            justify-content: space-between;
+        }
+
+        .hamburger-icon span {
+            display: block;
+            height: 2px;
+            width: 100%;
+            background-color: var(--white);
+            transition: var(--transition);
+            transform-origin: center;
+        }
+
+        /* Hamburger animation when menu is active */
+        .nav-menu.active + .header-container .hamburger-icon span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .nav-menu.active + .header-container .hamburger-icon span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-menu.active + .header-container .hamburger-icon span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        header.scrolled .hamburger-icon span {
+            background-color: var(--white);
+        }
+
+        /* Enhanced CTA button visibility and styling */
         .header-inquiry-btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 12px 25px;
+            padding: 10px 20px; /* Slightly reduced */
             background-color: transparent;
             color: var(--white);
             text-decoration: none;
@@ -213,19 +270,21 @@
             border: 1px solid var(--white);
             cursor: pointer;
             transition: var(--transition);
-            font-size: 15px;
+            font-size: 14px; /* Slightly smaller */
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px; /* Slightly reduced */
             font-family: 'Lora', serif;
             z-index: 1002;
-            min-height: 44px;
-            min-width: 150px;
+            min-height: 40px; /* Reduced from 44px */
+            min-width: 130px; /* Reduced from 150px */
             line-height: 1.4;
+            border-radius: 2px; /* Subtle rounding */
         }
 
         .header-inquiry-btn:hover {
             background-color: var(--white);
             color: var(--black);
+            transform: translateY(-1px); /* Subtle lift effect */
         }
 
         header.scrolled .header-inquiry-btn {
@@ -238,38 +297,7 @@
             color: var(--beige);
         }
 
-        /* Updated Hamburger Menu Styles - Smaller on mobile */
-        .hamburger-btn {
-            display: flex;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-            z-index: 1002;
-            min-height: 44px;
-        }
-
-        .hamburger-icon {
-            display: flex;
-            flex-direction: column;
-            width: 24px;
-            height: 18px;
-            justify-content: space-between;
-        }
-
-        .hamburger-icon span {
-            display: block;
-            height: 2px;
-            width: 100%;
-            background-color: var(--white);
-            transition: var(--transition);
-        }
-
-        header.scrolled .hamburger-icon span {
-            background-color: var(--white);
-        }
-
-        /* Navigation Menu */
+        /* Improved navigation menu */
         .nav-menu {
             display: none;
             position: fixed;
@@ -277,22 +305,30 @@
             left: 0;
             width: 100%;
             height: 100vh;
-            background-color: var(--white);
+            background-color: rgba(255, 255, 255, 0.98); /* Slightly transparent */
             z-index: 1000;
-            padding: 5rem 2rem 2rem;
+            padding: 80px 2rem 2rem; /* Increased top padding */
             overflow-y: auto;
+            backdrop-filter: blur(5px); /* Subtle blur effect */
         }
 
         .nav-menu.active {
             display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .nav-menu ul {
             list-style: none;
+            margin-top: 20px;
         }
 
         .nav-menu ul li {
-            margin: 20px 0;
+            margin: 18px 0; /* Slightly reduced spacing */
             position: relative;
         }
 
@@ -302,11 +338,11 @@
             font-weight: 500;
             transition: color 0.3s ease;
             position: relative;
-            font-size: 1.5rem;
+            font-size: 1.4rem; /* Slightly smaller */
             letter-spacing: 1px;
             text-transform: uppercase;
             display: inline-block;
-            padding: 10px 0;
+            padding: 8px 0; /* Reduced padding */
             font-family: 'Lora', serif;
         }
 
@@ -329,45 +365,71 @@
             width: 100%;
         }
 
-        /* Language Switcher in Navigation */
+        /* Enhanced language switcher */
         .language-switcher {
-            margin: 25px 0;
-            padding-bottom: 15px;
+            margin: 20px 0; /* Reduced spacing */
+            padding-bottom: 12px; /* Reduced padding */
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 15px; /* Added gap between language options */
         }
 
         .language-switcher a {
             text-decoration: none;
             color: var(--black);
-            font-size: 1.1rem;
+            font-size: 1rem; /* Slightly smaller */
             letter-spacing: 1px;
             text-transform: uppercase;
             transition: color 0.3s ease;
-            margin-right: 15px;
             font-weight: 400;
             font-family: 'Lora', serif;
+            padding: 5px 10px;
+            border-radius: 2px;
         }
 
         .language-switcher a:hover {
             color: var(--gold);
+            background-color: rgba(200, 169, 126, 0.1);
         }
 
         .language-switcher a.active {
             color: var(--gold);
             font-weight: 500;
+            background-color: rgba(200, 169, 126, 0.15);
         }
 
         .coming-soon-badge {
             position: absolute;
-            top: -8px;
-            right: -25px;
+            top: -6px; /* Adjusted positioning */
+            right: -20px; /* Adjusted positioning */
             background-color: var(--gold);
             color: var(--white);
-            font-size: 0.7rem;
-            padding: 2px 6px;
+            font-size: 0.65rem; /* Slightly smaller */
+            padding: 2px 5px; /* Reduced padding */
             border-radius: 2px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+        }
+
+        /* ===== ABOUT SECTION SPACING FIX ===== */
+        .about {
+            padding: 100px 0;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .about-text {
+            margin-top: 40px; /* Added spacing between header and content */
+        }
+
+        .about-text p {
+            margin-bottom: 2rem; /* Increased paragraph spacing */
+            line-height: 1.8; /* Improved readability */
+            max-width: none; /* Allow full width for better flow */
         }
 
         /* Hero Section */
@@ -787,16 +849,6 @@
             text-align: center;
         }
 
-        /* About Section */
-        .about {
-            background-color: var(--white);
-        }
-
-        .about-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
         /* News Section */
         .news {
             background-color: var(--white);
@@ -1055,19 +1107,21 @@
             text-align: center;
         }
 
-        /* Mobile Responsive Styles for Header */
+        /* ===== MOBILE RESPONSIVENESS ===== */
+
         @media (max-width: 768px) {
             header {
-                padding: 15px 0;
+                padding: 12px 0; /* Further reduced on mobile */
             }
             
             header.scrolled {
-                padding: 10px 0;
+                padding: 8px 0; /* Further reduced on mobile */
             }
             
             .header-container {
                 flex-wrap: wrap;
                 justify-content: space-between;
+                min-height: 45px; /* Reduced on mobile */
             }
             
             .logo {
@@ -1075,36 +1129,49 @@
                 transform: none;
                 order: 2;
                 text-align: center;
-                font-size: 1.8rem;
+                font-size: 1.6rem; /* Smaller on mobile */
                 flex: 1;
+                margin: 0 10px; /* Added margin for spacing */
             }
             
             .hamburger-btn {
                 order: 1;
-                margin-right: 10px;
+                margin-right: 5px; /* Reduced margin */
+                padding: 6px; /* Further reduced on mobile */
             }
             
-            /* Make Send Inquiry button visible on mobile */
+            .hamburger-icon {
+                width: 20px; /* Smaller on mobile */
+                height: 14px; /* Smaller on mobile */
+            }
+            
+            /* Ensure Send Inquiry button is visible and properly sized on mobile */
             .header-inquiry-btn {
                 display: inline-flex;
                 order: 3;
-                margin-left: 10px;
-                font-size: 0.8rem;
-                padding: 10px 15px;
-                min-width: 120px;
+                margin-left: 5px; /* Reduced margin */
+                font-size: 0.75rem; /* Smaller on mobile */
+                padding: 8px 12px; /* Smaller on mobile */
+                min-width: 110px; /* Smaller on mobile */
+                min-height: 36px; /* Smaller on mobile */
+                letter-spacing: 1px; /* Reduced on mobile */
+            }
+            
+            .nav-menu {
+                padding: 70px 1.5rem 1.5rem; /* Adjusted for mobile */
             }
             
             .nav-menu ul li a {
-                font-size: 1.3rem;
+                font-size: 1.2rem; /* Smaller on mobile */
             }
             
             .language-switcher {
-                margin: 20px 0;
-                padding-bottom: 10px;
+                margin: 15px 0; /* Reduced on mobile */
+                padding-bottom: 10px; /* Reduced on mobile */
             }
             
             .language-switcher a {
-                font-size: 1rem;
+                font-size: 0.9rem; /* Smaller on mobile */
             }
             
             /* Updated heading sizes for mobile */
@@ -1127,48 +1194,20 @@
             p {
                 font-size: 15px;
             }
-        }
-
-        @media (max-width: 576px) {
-            .logo {
-                font-size: 1.6rem;
+            
+            /* Mobile About section spacing */
+            .about {
+                padding: 70px 0; /* Reduced padding on mobile */
             }
             
-            /* Further reduce hamburger size on small screens */
-            .hamburger-icon {
-                width: 20px;
-                height: 16px;
-            }
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            h1 {
-                font-size: 48px;
+            .about-text {
+                margin-top: 30px; /* Reduced spacing on mobile */
             }
             
-            h2 {
-                font-size: 36px;
+            .about-text p {
+                margin-bottom: 1.5rem; /* Slightly reduced spacing on mobile */
             }
             
-            .sub-service-detail .container {
-                flex-direction: column;
-            }
-            
-            .sub-service-detail img {
-                max-width: 100%;
-            }
-            
-            .inquiry-modal {
-                width: 95%;
-            }
-            
-            .news-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            }
-        }
-
-        @media (max-width: 768px) {
             .hero h1 {
                 font-size: 32px;
             }
@@ -1241,6 +1280,22 @@
         }
 
         @media (max-width: 576px) {
+            .logo {
+                font-size: 1.5rem; /* Further reduced on small screens */
+            }
+            
+            .header-inquiry-btn {
+                min-width: 100px; /* Further reduced on small screens */
+                font-size: 0.7rem; /* Further reduced on small screens */
+                padding: 6px 10px; /* Further reduced on small screens */
+            }
+            
+            /* Further reduce hamburger size on very small screens */
+            .hamburger-icon {
+                width: 18px;
+                height: 12px;
+            }
+            
             h1 {
                 font-size: 32px;
             }
@@ -1275,6 +1330,32 @@
             }
         }
 
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 48px;
+            }
+            
+            h2 {
+                font-size: 36px;
+            }
+            
+            .sub-service-detail .container {
+                flex-direction: column;
+            }
+            
+            .sub-service-detail img {
+                max-width: 100%;
+            }
+            
+            .inquiry-modal {
+                width: 95%;
+            }
+            
+            .news-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
         @media (max-width: 400px) {
             .hero-buttons {
                 gap: 10px;
@@ -1285,6 +1366,28 @@
                 padding: 10px 15px;
                 font-size: 0.85rem;
             }
+        }
+
+        /* ===== ADDITIONAL ENHANCEMENTS ===== */
+
+        /* Fix for iOS zoom on input focus */
+        @media screen and (-webkit-min-device-pixel-ratio:0) {
+            select:focus,
+            textarea:focus,
+            input:focus {
+                font-size: 16px; /* Prevents zoom on iOS */
+            }
+        }
+
+        /* Improved scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Prevent horizontal scroll on mobile */
+        body {
+            overflow-x: hidden;
+            width: 100%;
         }
     </style>
 </head>
@@ -1503,13 +1606,14 @@
             <div class="section-header">
                 <h2 data-key="about">About OSHI XII</h2>
                 <p data-key="about-description">Intentional, elevated living across Africa and beyond.</p>
-                <div class="about-content">
-
+            </div>
+            <div class="about-content">
                 <div class="about-text">
                     <p data-key="about-text1">OSHI XII curates premium residences and immersive safari experiences designed to enrich your wellbeing, connect you with the world, and reflect your values. Every experience blends authentic cultural immersion with refined comfort and world-class service.</p>
                     <p data-key="about-text2">We are launching with our core offerings, with plans to expand into comprehensive concierge services in the future, ensuring every OSHI XII experience is personal and thoughtfully crafted</p>
                     <p data-key="about-text4">Welcome to OSHI XII purposeful, elevated, and designed for you.</p>
                 </div>
+            </div>
         </div>
     </section>
 
