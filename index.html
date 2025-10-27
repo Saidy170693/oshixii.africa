@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OSHI XII – Premium Experiences & Residences</title>
+    <title>OSHI XII – Premium Experiences and Residences</title>
     <meta name="description" content="Discover Africa and the world with curated collections of premium experiences, properties, and services.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Updated Google Fonts Import -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -25,6 +26,7 @@
             box-sizing: border-box;
         }
 
+        /* Updated Font Families */
         body {
             font-family: 'Lora', serif;
             color: var(--dark-gray);
@@ -33,39 +35,48 @@
             overflow-x: hidden;
             font-weight: 400;
             font-size: 18px;
+            letter-spacing: 0.02em;
         }
 
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Playfair Display', serif;
             font-weight: 500;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2em;
             color: var(--black);
-            letter-spacing: 0.5px;
+            letter-spacing: 0.02em;
         }
 
+        /* Updated Heading Sizes */
         h1 {
-            font-size: 3.5rem;
-            line-height: 1.2;
+            font-size: 56px;
+            line-height: 1.1;
             font-weight: 400;
         }
 
         h2 {
-            font-size: 3rem;
-            margin-bottom: 2.5rem;
+            font-size: 40px;
+            line-height: 1.2;
             font-weight: 500;
         }
 
         h3 {
-            font-size: 2.2rem;
-            color: var(--dark-beige);
+            font-size: 32px;
+            line-height: 1.3;
+            font-weight: 500;
+        }
+
+        h4, h5, h6 {
+            font-size: 24px;
+            line-height: 1.4;
             font-weight: 500;
         }
 
         p {
             margin-bottom: 1.5rem;
-            font-size: 1.2rem;
+            font-size: 18px;
             font-weight: 400;
-            line-height: 1.8;
+            line-height: 1.75;
+            max-width: 750px;
         }
 
         .container {
@@ -75,7 +86,7 @@
             padding: 0 20px;
         }
 
-        /* Standardized Button Styles */
+        /* Updated Button Styles */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -88,13 +99,14 @@
             border: 1px solid var(--black);
             cursor: pointer;
             transition: var(--transition);
-            font-size: 0.9rem;
+            font-size: 15px;
             text-transform: uppercase;
             letter-spacing: 2px;
             font-family: 'Lora', serif;
             min-height: 44px;
             min-width: 150px;
             text-align: center;
+            line-height: 1.4;
         }
 
         .btn:hover {
@@ -201,13 +213,14 @@
             border: 1px solid var(--white);
             cursor: pointer;
             transition: var(--transition);
-            font-size: 0.9rem;
+            font-size: 15px;
             text-transform: uppercase;
             letter-spacing: 2px;
             font-family: 'Lora', serif;
             z-index: 1002;
             min-height: 44px;
             min-width: 150px;
+            line-height: 1.4;
         }
 
         .header-inquiry-btn:hover {
@@ -225,7 +238,7 @@
             color: var(--beige);
         }
 
-        /* Hamburger Menu Styles */
+        /* Updated Hamburger Menu Styles - Smaller on mobile */
         .hamburger-btn {
             display: flex;
             background: none;
@@ -239,14 +252,14 @@
         .hamburger-icon {
             display: flex;
             flex-direction: column;
-            width: 30px;
-            height: 20px;
+            width: 24px;
+            height: 18px;
             justify-content: space-between;
         }
 
         .hamburger-icon span {
             display: block;
-            height: 3px;
+            height: 2px;
             width: 100%;
             background-color: var(--white);
             transition: var(--transition);
@@ -294,6 +307,7 @@
             text-transform: uppercase;
             display: inline-block;
             padding: 10px 0;
+            font-family: 'Lora', serif;
         }
 
         .nav-menu ul li a:after {
@@ -331,6 +345,7 @@
             transition: color 0.3s ease;
             margin-right: 15px;
             font-weight: 400;
+            font-family: 'Lora', serif;
         }
 
         .language-switcher a:hover {
@@ -437,9 +452,12 @@
             padding: 30px;
         }
 
+        /* Updated Service Section Headings - Black color */
         .service-card h3 {
             margin-bottom: 15px;
             font-size: 1.8rem;
+            color: #000000 !important;
+            font-weight: 500;
         }
 
         .service-card p {
@@ -701,6 +719,7 @@
             margin-bottom: 8px;
             font-weight: 500;
             color: var(--dark-gray);
+            font-family: 'Lora', serif;
         }
 
         .required {
@@ -1020,12 +1039,20 @@
             color: var(--black);
         }
 
+        /* Fixed Footer Bottom - Copyright Centered */
         .footer-bottom {
-            text-align: center;
+            display: flex;
+            justify-content: center;
             padding-top: 40px;
             border-top: 1px solid #333;
             color: #bbb;
             font-size: 1.1rem;
+            width: 100%;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            text-align: center;
         }
 
         /* Mobile Responsive Styles for Header */
@@ -1057,8 +1084,14 @@
                 margin-right: 10px;
             }
             
+            /* Make Send Inquiry button visible on mobile */
             .header-inquiry-btn {
-                display: none;
+                display: inline-flex;
+                order: 3;
+                margin-left: 10px;
+                font-size: 0.8rem;
+                padding: 10px 15px;
+                min-width: 120px;
             }
             
             .nav-menu ul li a {
@@ -1073,22 +1106,49 @@
             .language-switcher a {
                 font-size: 1rem;
             }
+            
+            /* Updated heading sizes for mobile */
+            h1 {
+                font-size: 32px;
+            }
+            
+            h2 {
+                font-size: 28px;
+            }
+            
+            h3 {
+                font-size: 24px;
+            }
+            
+            h4, h5, h6 {
+                font-size: 20px;
+            }
+            
+            p {
+                font-size: 15px;
+            }
         }
 
         @media (max-width: 576px) {
             .logo {
                 font-size: 1.6rem;
             }
+            
+            /* Further reduce hamburger size on small screens */
+            .hamburger-icon {
+                width: 20px;
+                height: 16px;
+            }
         }
 
         /* Responsive Styles */
         @media (max-width: 992px) {
             h1 {
-                font-size: 3rem;
+                font-size: 48px;
             }
             
             h2 {
-                font-size: 2.5rem;
+                font-size: 36px;
             }
             
             .sub-service-detail .container {
@@ -1110,7 +1170,7 @@
 
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 32px;
             }
             
             .hero p {
@@ -1136,7 +1196,7 @@
             }
             
             p {
-                font-size: 1.1rem;
+                font-size: 15px;
             }
             
             .services-grid {
@@ -1182,11 +1242,11 @@
 
         @media (max-width: 576px) {
             h1 {
-                font-size: 2.2rem;
+                font-size: 32px;
             }
             
             h2 {
-                font-size: 2rem;
+                font-size: 28px;
             }
             
             section {
@@ -1244,7 +1304,7 @@
             <!-- Centered Logo -->
             <a href="#" class="logo">OSHI <span>XII</span></a>
             
-            <!-- Header Inquiry Button -->
+            <!-- Header Inquiry Button - Now visible on mobile -->
             <button class="header-inquiry-btn" id="openInquiryModal">Send Inquiry</button>
             
             <!-- Navigation Menu -->
@@ -1258,7 +1318,7 @@
                 <ul>
                     <li><a href="#home" data-key="home">Home</a></li>
                     <li><a href="#premium-residences" data-key="premium-residences">Premium Residences</a></li>
-                    <li><a href="#safari-nature" data-key="safari-nature">Safari & Nature</a></li>
+                    <li><a href="#safari-nature" data-key="safari-nature">Safari and Nature</a></li>
                     <li><a href="#corporate-services" data-key="corporate-services">Corporate Services</a></li>
                     <li class="menu-item-has-children">
                         <a href="#concierge-services" data-key="concierge-services">Concierge Services</a>
@@ -1275,7 +1335,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1 data-key="hero-title">Experience Greater Living</h1>
-                <p data-key="hero-subtitle">Discover curated residences and safaris across Africa, tailored for discerning travelers.</p>
+                <p data-key="hero-subtitle">Curated residences and immersive safari escapes, designed for those who value intentional, elevated experiences.</p>
                 <div class="hero-buttons">
                     <a href="#premium-residences" class="btn btn-beige" data-key="explore">Explore</a>
                     <button class="btn btn-beige" id="heroInquiryBtn" data-key="book">Book</button>
@@ -1297,7 +1357,7 @@
                     <div class="carousel" id="residences-carousel">
                         <div class="carousel-track" id="residences-track">
                             <div class="carousel-slide">
-                                <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2067&q=80" alt="Premium Residences">
+                                <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Modern villa with pool and ocean view – part of OSHI XII Premium Residences">
                             </div>
                             <div class="carousel-slide">
                                 <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Premium Villa">
@@ -1325,12 +1385,12 @@
                     </div>
                 </div>
 
-                <!-- Safari & Nature Escapes Card -->
+                <!-- Safari and Nature Escapes Card -->
                 <div class="service-card" data-service="safari-nature">
                     <div class="carousel" id="safari-carousel">
                         <div class="carousel-track" id="safari-track">
                             <div class="carousel-slide">
-                                <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Safari & Nature Escapes">
+                                <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Safari and Nature Escapes">
                             </div>
                             <div class="carousel-slide">
                                 <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Wildlife Safari">
@@ -1352,7 +1412,7 @@
                         </div>
                     </div>
                     <div class="service-card-content">
-                        <h3 data-key="safari-nature">Safari & Nature Escapes</h3>
+                        <h3 data-key="safari-nature">Safari and Nature Escapes</h3>
                         <p data-key="safari-nature-desc">Immersive African experiences that connect you with wildlife, culture, and breathtaking natural landscapes.</p>
                         <button class="btn" data-key="explore-journeys" data-service="safari-nature">Explore Journeys</button>
                     </div>
@@ -1380,7 +1440,7 @@
     <!-- Premium Residences Section -->
     <section id="premium-residences" class="sub-service-detail">
         <div class="container">
-            <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2067&q=80" alt="Premium Residences">
+            <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Modern villa with pool and ocean view – part of OSHI XII Premium Residences">
             <div class="sub-service-detail-content">
                 <h2 data-key="premium-residences">Premium Residences</h2>
                 <p data-key="premium-residences-detail">Our curated collection of high-end properties offers unparalleled comfort and premium experiences across Africa's most breathtaking destinations. Each residence is carefully selected for its unique character, exceptional amenities, and stunning locations.</p>
@@ -1397,11 +1457,11 @@
         </div>
     </section>
 
-    <!-- Safari & Nature Section -->
+    <!-- Safari and Nature Section -->
     <section id="safari-nature" class="sub-service-detail">
         <div class="container">
             <div class="sub-service-detail-content">
-                <h2 data-key="safari-nature">Safari & Nature Escapes</h2>
+                <h2 data-key="safari-nature">Safari and Nature Escapes</h2>
                 <p data-key="safari-nature-detail">Immerse yourself in Africa's wild beauty with our carefully crafted safari experiences. From tracking the Big Five to cultural encounters with local communities, each journey is designed to create lasting memories and deep connections with nature.</p>
                 <ul>
                     <li data-key="safari-nature-item1">Private guided wildlife safaris</li>
@@ -1411,18 +1471,18 @@
                     <li data-key="safari-nature-item5">Conservation-focused activities</li>
                     <li data-key="safari-nature-item6">Exclusive access to private reserves</li>
                 </ul>
-                <button class="btn" data-service="Safari & Nature Escapes" data-key="inquire-now">Inquire Now</button>
+                <button class="btn" data-service="Safari and Nature Escapes" data-key="inquire-now">Inquire Now</button>
             </div>
-            <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Safari & Nature Escapes">
+            <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Safari and Nature Escapes">
         </div>
     </section>
 
     <!-- Corporate Services Section -->
     <section id="corporate-services" class="sub-service-detail">
         <div class="container">
-            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Corporate Experiences & Events">
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Corporate Experiences and Events">
             <div class="sub-service-detail-content">
-                <h2 data-key="corporate-services">Corporate Experiences & Events</h2>
+                <h2 data-key="corporate-services">Corporate Experiences and Events</h2>
                 <p data-key="corporate-services-detail">Curated gatherings designed to inspire, connect, and elevate your team's potential through expertly managed conferences, retreats, and forums. We create environments where business objectives meet exceptional experiences.</p>
                 <ul>
                     <li data-key="corporate-services-item1">Corporate Conferences with premium venues and facilities</li>
@@ -1432,7 +1492,7 @@
                     <li data-key="corporate-services-item5">Team building activities in inspiring locations</li>
                     <li data-key="corporate-services-item6">Strategic planning sessions with expert facilitation</li>
                 </ul>
-                <button class="btn" data-service="Corporate Experiences & Events" data-key="inquire-now">Inquire Now</button>
+                <button class="btn" data-service="Corporate Experiences and Events" data-key="inquire-now">Inquire Now</button>
             </div>
         </div>
     </section>
@@ -1442,16 +1502,14 @@
         <div class="container">
             <div class="section-header">
                 <h2 data-key="about">About OSHI XII</h2>
-                <p data-key="about-description">Our vision for intentional, elevated living across Africa and beyond</p>
-            </div>
-            <div class="about-content">
+                <p data-key="about-description">Intentional, elevated living across Africa and beyond.</p>
+                <div class="about-content">
+
                 <div class="about-text">
-                    <p data-key="about-text1">At OSHI XII, we believe in the art of Greater Living a lifestyle where every detail is thoughtfully curated to elevate your wellbeing, enrich your everyday, and connect you more deeply to the world around you.</p>
-                    <p data-key="about-text2">We're launching with our core offerings of <strong data-key="premium-residences">Premium Residences</strong> and <strong data-key="safari-nature">Safari & Nature Escapes</strong>, with plans to expand into comprehensive concierge services through a phased approach.</p>
-                    <p data-key="about-text3">Every OSHI XII experience is personal. We blend authentic cultural immersion with refined comfort and world-class service creating meaningful moments that reflect your values and aspirations.</p>
+                    <p data-key="about-text1">OSHI XII curates premium residences and immersive safari experiences designed to enrich your wellbeing, connect you with the world, and reflect your values. Every experience blends authentic cultural immersion with refined comfort and world-class service.</p>
+                    <p data-key="about-text2">We are launching with our core offerings, with plans to expand into comprehensive concierge services in the future, ensuring every OSHI XII experience is personal and thoughtfully crafted</p>
                     <p data-key="about-text4">Welcome to OSHI XII purposeful, elevated, and designed for you.</p>
                 </div>
-            </div>
         </div>
     </section>
 
@@ -1459,7 +1517,7 @@
     <section id="news" class="news">
         <div class="container">
             <div class="section-header">
-                <h2 data-key="news-partnerships">News & Partnerships</h2>
+                <h2 data-key="news">News</h2>
                 <p data-key="news-description">Stay updated with our latest collaborations and exclusive events</p>
             </div>
             
@@ -1468,7 +1526,8 @@
                 <!-- LUSSO AUTO Partnership News Item -->
                 <div class="news-item" data-news="lusso-auto">
                     <div class="news-image">
-                        <img src="4U4A5519(1).jpg" alt="Ferrari Sports Car">
+                        <!-- Updated image for Exclusive Wine Motorsport News Card -->
+                        <img src="4U4A5519(1).jpg" alt="Exclusive Wine Country Motorsport Weekend – OSHI XII Experiences">
                     </div>
                     <div class="news-content">
                         <div class="news-date">September 2025</div>
@@ -1516,8 +1575,8 @@
                     <button class="back-to-news">Back to News</button>
                 </div>
                 
-                <!-- Ferrari Image -->
-                <img src="4U4A5519(1).jpg" alt="Ferrari Sports Car" class="news-detail-image">
+                <!-- Updated Ferrari Image -->
+                <img src="4U4A5519(1).jpg" alt="Exclusive Wine Country Motorsport Weekend – OSHI XII Experiences" class="news-detail-image">
                 
                 <div class="news-detail-content">
                     <p>
@@ -1572,7 +1631,7 @@
                         Zambia is emerging as one of Southern Africa's most captivating destinations, offering <strong>untouched landscapes</strong>, rich wildlife, and vibrant cultural experiences in a peaceful, unhurried setting.
                     </p>
                     
-                    <h4>Wildlife & Nature Adventures</h4>
+                    <h4>Wildlife and Nature Adventures</h4>
                     <p>
                         From the majestic Victoria Falls to the vast national parks, Zambia is home to abundant wildlife and breathtaking scenery. Visitors can explore:
                     </p>
@@ -1712,13 +1771,13 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>OSHI XII</h3>
-                    <p data-key="footer-description">Experience Greater Living with curated collections of premium experiences, properties, and services across Africa and beyond.</p>
+                    <p data-key="footer-description">Curated experiences, residences, and services across Africa and beyond for discerning travelers.</p>
                 </div>
                 <div class="footer-column">
                     <h3 data-key="services">Services</h3>
                     <ul>
                         <li><a href="#premium-residences" data-key="premium-residences">Premium Residences</a></li>
-                        <li><a href="#safari-nature" data-key="safari-nature">Safari & Nature Escapes</a></li>
+                        <li><a href="#safari-nature" data-key="safari-nature">Safari and Nature Escapes</a></li>
                         <li><a href="#corporate-services" data-key="corporate-services">Corporate Services</a></li>
                         <li><a href="#concierge-services" data-key="concierge-services">Concierge Services</a></li>
                     </ul>
@@ -1736,7 +1795,6 @@
             <div class="social-links">
                 <a href="https://www.facebook.com/OSHIXII" target="_blank"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/oshixii" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/company/oshi-xii" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                 <a href="https://twitter.com/OSHIXII" target="_blank"><i class="fab fa-twitter"></i></a>
             </div>
             <div class="footer-bottom">
@@ -1746,6 +1804,172 @@
     </footer>
 
     <script>
+        // Language content dictionary
+        const translations = {
+            en: {
+                // Header and Navigation
+                'home': 'Home',
+                'premium-residences': 'Premium Residences',
+                'safari-nature': 'Safari and Nature',
+                'corporate-services': 'Corporate Services',
+                'concierge-services': 'Concierge Services',
+                'coming-soon': 'Coming Soon',
+                'about': 'About',
+                
+                // Hero Section
+                'hero-title': 'Experience Greater Living',
+                'hero-subtitle': 'Curated residences and immersive safari escapes, designed for those who value intentional, elevated experiences.',
+                'explore': 'Explore',
+                'book': 'Book',
+                
+                // Services Section
+                'our-services': 'Our Services',
+                'services-description': 'Experience the first phase of our premium offerings, with exclusive concierge services launching soon',
+                'premium-residences-desc': 'Curated high-end stays across Africa\'s most breathtaking destinations, offering unparalleled comfort and premium experiences.',
+                'view-properties': 'View Properties',
+                'safari-nature-desc': 'Immersive African experiences that connect you with wildlife, culture, and breathtaking natural landscapes.',
+                'explore-journeys': 'Explore Journeys',
+                'concierge-services-desc': 'Comprehensive lifestyle management and personalized nutrition programs designed to simplify and enhance your daily life.',
+                'available-soon': 'Available Soon',
+                'invitation-only': 'By Invitation',
+                
+                // Service Detail Sections
+                'premium-residences-detail': 'Our curated collection of high-end properties offers unparalleled comfort and premium experiences across Africa\'s most breathtaking destinations. Each residence is carefully selected for its unique character, exceptional amenities, and stunning locations.',
+                'premium-residences-item1': 'Beach Villas with private ocean access',
+                'premium-residences-item2': 'Wine Valley Retreats in premier vineyards',
+                'premium-residences-item3': 'Urban Retreats in vibrant city centers',
+                'premium-residences-item4': 'Mountain Lodges with panoramic views',
+                'premium-residences-item5': '24/7 dedicated concierge service',
+                'premium-residences-item6': 'Personalized experiences and activities',
+                'safari-nature-detail': 'Immerse yourself in Africa\'s wild beauty with our carefully crafted safari experiences. From tracking the Big Five to cultural encounters with local communities, each journey is designed to create lasting memories and deep connections with nature.',
+                'safari-nature-item1': 'Private guided wildlife safaris',
+                'safari-nature-item2': 'Premium tented camps and lodges',
+                'safari-nature-item3': 'Cultural immersion experiences',
+                'safari-nature-item4': 'Photography-focused expeditions',
+                'safari-nature-item5': 'Conservation-focused activities',
+                'safari-nature-item6': 'Exclusive access to private reserves',
+                'corporate-services': 'Corporate Experiences and Events',
+                'corporate-services-detail': 'Curated gatherings designed to inspire, connect, and elevate your team\'s potential through expertly managed conferences, retreats, and forums. We create environments where business objectives meet exceptional experiences.',
+                'corporate-services-item1': 'Corporate Conferences with premium venues and facilities',
+                'corporate-services-item2': 'Executive Retreats for leadership teams',
+                'corporate-services-item3': 'Leadership Forums for thought leaders',
+                'corporate-services-item4': 'Annual Corporate Events and milestone celebrations',
+                'corporate-services-item5': 'Team building activities in inspiring locations',
+                'corporate-services-item6': 'Strategic planning sessions with expert facilitation',
+                'inquire-now': 'Inquire Now',
+                
+                // About Section
+                'about-description': 'Intentional, elevated living across Africa and beyond.',
+                'about-text1': 'OSHI XII curates premium residences and immersive safari experiences designed to enrich your wellbeing, connect you with the world, and reflect your values. Every experience blends authentic cultural immersion with refined comfort and world-class service.',
+                'about-text2': 'We are launching with our core offerings, with plans to expand into comprehensive concierge services in the future, ensuring every OSHI XII experience is personal and thoughtfully crafted',
+                'about-text4': 'Welcome to OSHI XII purposeful, elevated, and designed for you.',
+                
+                // News Section
+                'news': 'News',
+                'news-description': 'Stay updated with our latest collaborations and exclusive events',
+                
+                // Inquiry Modal
+                'inquiry-title': 'Send an Inquiry',
+                'first-name': 'First Name',
+                'last-name': 'Last Name',
+                'email': 'Email Address',
+                'budget': 'Budget Range',
+                'premium': 'Premium',
+                'ultra-premium': 'Ultra Premium',
+                'bespoke': 'Bespoke Custom',
+                'message': 'Additional Details',
+                'submit-inquiry': 'Submit Inquiry',
+                'success-message': 'Thank you for your inquiry! We\'ll get back to you within 24 hours.',
+                'error-message': 'There was an error submitting your inquiry. Please try again or contact us directly.',
+                
+                // Footer
+                'footer-description': 'Curated experiences, residences, and services across Africa and beyond for discerning travelers.',
+                'services': 'Services',
+                'contact-us': 'Contact Us'
+            },
+            fr: {
+                // Header and Navigation
+                'home': 'Accueil',
+                'premium-residences': 'Résidences Premium',
+                'safari-nature': 'Safari et Nature',
+                'corporate-services': 'Services Entreprises',
+                'concierge-services': 'Services Conciergerie',
+                'coming-soon': 'Bientôt Disponible',
+                'about': 'À Propos',
+                
+                // Hero Section
+                'hero-title': 'Vivez une Expérience Supérieure',
+                'hero-subtitle': 'Résidences sélectionnées et évasions safari immersives, conçues pour ceux qui valorisent des expériences intentionnelles et élevées.',
+                'explore': 'Explorer',
+                'book': 'Réserver',
+                
+                // Services Section
+                'our-services': 'Nos Services',
+                'services-description': 'Découvrez la première phase de nos offres premium, avec des services de conciergerie exclusifs à venir bientôt',
+                'premium-residences-desc': 'Séjours haut de gamme sélectionnés à travers les destinations les plus époustouflantes d\'Afrique, offrant un confort inégalé et des expériences premium.',
+                'view-properties': 'Voir les Propriétés',
+                'safari-nature-desc': 'Expériences africaines immersives qui vous connectent avec la faune, la culture et des paysages naturels à couper le souffle.',
+                'explore-journeys': 'Explorer les Circuits',
+                'concierge-services-desc': 'Gestion complète du mode de vie et programmes de nutrition personnalisés conçus pour simplifier et améliorer votre vie quotidienne.',
+                'available-soon': 'Bientôt Disponible',
+                'invitation-only': 'Sur Invitation',
+                
+                // Service Detail Sections
+                'premium-residences-detail': 'Notre collection sélectionnée de propriétés haut de gamme offre un confort inégalé et des expériences premium à travers les destinations les plus époustouflantes d\'Afrique. Chaque résidence est soigneusement sélectionnée pour son caractère unique, ses équipements exceptionnels et ses emplacements magnifiques.',
+                'premium-residences-item1': 'Villas de plage avec accès privé à l\'océan',
+                'premium-residences-item2': 'Retraites dans les vignobles de premier plan',
+                'premium-residences-item3': 'Retraites urbaines dans les centres-villes animés',
+                'premium-residences-item4': 'Lodges de montagne avec vues panoramiques',
+                'premium-residences-item5': 'Service de conciergerie dédié 24h/24 et 7j/7',
+                'premium-residences-item6': 'Expériences et activités personnalisées',
+                'safari-nature-detail': 'Immergez-vous dans la beauté sauvage de l\'Afrique avec nos expériences safari soigneusement conçues. Du suivi des Big Five aux rencontres culturelles avec les communautés locales, chaque voyage est conçu pour créer des souvenirs durables et des liens profonds avec la nature.',
+                'safari-nature-item1': 'Safaris animaliers privés avec guide',
+                'safari-nature-item2': 'Camps sous tente premium et lodges',
+                'safari-nature-item3': 'Expériences d\'immersion culturelle',
+                'safari-nature-item4': 'Expéditions axées sur la photographie',
+                'safari-nature-item5': 'Activités axées sur la conservation',
+                'safari-nature-item6': 'Accès exclusif aux réserves privées',
+                'corporate-services': 'Expériences et Événements d\'Entreprise',
+                'corporate-services-detail': 'Rassemblements organisés pour inspirer, connecter et élever le potentiel de votre équipe grâce à des conférences, retraites et forums gérés par des experts. Nous créons des environnements où les objectifs commerciaux rencontrent des expériences exceptionnelles.',
+                'corporate-services-item1': 'Conférences d\'entreprise avec lieux et installations premium',
+                'corporate-services-item2': 'Retraites pour cadres dirigeants',
+                'corporate-services-item3': 'Forums de leadership pour leaders d\'opinion',
+                'corporate-services-item4': 'Événements d\'entreprise annuels et célébrations de jalons',
+                'corporate-services-item5': 'Activités de team building dans des lieux inspirants',
+                'corporate-services-item6': 'Sessions de planification stratégique avec facilitation experte',
+                'inquire-now': 'Demander Maintenant',
+                
+                // About Section
+                'about-description': 'Une vie intentionnelle et élevée à travers l\'Afrique et au-delà.',
+                'about-text1': 'OSHI XII sélectionne des résidences premium et des expériences safari immersives conçues pour enrichir votre bien-être, vous connecter avec le monde et refléter vos valeurs. Chaque expérience allie immersion culturelle authentique, confort raffiné et service de classe mondiale.',
+                'about-text2': 'Nous lançons nos offres principales, avec des projets d\'expansion vers des services de conciergerie complets à l\'avenir, garantissant que chaque expérience OSHI XII est personnelle et soigneusement conçue',
+                'about-text4': 'Bienvenue chez OSHI XII, intentionnel, élevé et conçu pour vous.',
+                
+                // News Section
+                'news': 'Actualités',
+                'news-description': 'Restez informé de nos dernières collaborations et événements exclusifs',
+                
+                // Inquiry Modal
+                'inquiry-title': 'Envoyer une Demande',
+                'first-name': 'Prénom',
+                'last-name': 'Nom',
+                'email': 'Adresse Email',
+                'budget': 'Tranche de Budget',
+                'premium': 'Premium',
+                'ultra-premium': 'Ultra Premium',
+                'bespoke': 'Sur Mesure',
+                'message': 'Détails Supplémentaires',
+                'submit-inquiry': 'Soumettre la Demande',
+                'success-message': 'Merci pour votre demande ! Nous vous répondrons dans les 24 heures.',
+                'error-message': 'Une erreur s\'est produite lors de l\'envoi de votre demande. Veuillez réessayer ou nous contacter directement.',
+                
+                // Footer
+                'footer-description': 'Expériences, résidences et services sélectionnés à travers l\'Afrique et au-delà pour les voyageurs exigeants.',
+                'services': 'Services',
+                'contact-us': 'Contactez-Nous'
+            }
+        };
+
         // Scroll-activated header functionality
         const header = document.getElementById('mainHeader');
         
@@ -1966,27 +2190,26 @@
             const message = document.getElementById('message').value;
             
             if (!firstName || !lastName || !email || !message) {
-                showMessage(errorMessage, 'There was an error submitting your inquiry. Please try again or contact us directly.');
+                showMessage(errorMessage, translations[currentLang]['error-message']);
                 return;
             }
             
             if (!isValidEmail(email)) {
-                showMessage(errorMessage, 'There was an error submitting your inquiry. Please try again or contact us directly.');
+                showMessage(errorMessage, translations[currentLang]['error-message']);
                 return;
             }
             
             // Simulate form submission
             const submitBtn = this.querySelector('.submit-btn');
-            submitBtn.disabled
-                        submitBtn.disabled = true;
+            submitBtn.disabled = true;
             submitBtn.textContent = 'Submitting...';
             
             // Simulate API call
             setTimeout(() => {
-                showMessage(successMessage, 'Thank you for your inquiry! We\'ll get back to you within 24 hours.');
+                showMessage(successMessage, translations[currentLang]['success-message']);
                 inquiryForm.reset();
                 submitBtn.disabled = false;
-                submitBtn.textContent = 'Submit Inquiry';
+                submitBtn.textContent = translations[currentLang]['submit-inquiry'];
                 
                 // Close modal after success
                 setTimeout(() => {
@@ -2019,6 +2242,7 @@
 
         // Language Switcher Functionality
         const languageLinks = document.querySelectorAll('.language-switcher a');
+        let currentLang = 'en';
         
         languageLinks.forEach(link => {
             link.addEventListener('click', function(e) {
@@ -2038,15 +2262,20 @@
             });
         });
 
-        // Simple language content update (in a real implementation, this would be more comprehensive)
+        // Update content based on selected language
         function updateContentLanguage(lang) {
+            currentLang = lang;
             const elements = document.querySelectorAll('[data-key]');
             
             elements.forEach(element => {
                 const key = element.getAttribute('data-key');
-                // In a real implementation, you would fetch translations from a dictionary
-                // For now, we'll just log the language change
-                console.log(`Updating ${key} to ${lang}`);
+                if (translations[lang] && translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = translations[lang][key];
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
+                }
             });
             
             // Update HTML lang attribute
